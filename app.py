@@ -15,7 +15,7 @@ def scrape_land_data_playwright(land_number: str) -> dict:
         page.wait_for_selector('input[name="landNum"]', timeout=10000)
         page.fill('input[name="landNum"]', land_number)
 
-        time.sleep(30)  # Allow manual CAPTCHA solving
+        time.sleep(30)  # Manual CAPTCHA solving time
 
         page.click('button[type="submit"]')
         page.wait_for_timeout(5000)
@@ -59,10 +59,6 @@ def scrape():
 
     result = scrape_land_data_playwright(land_number)
     return jsonify(result)
-
-@app.route('/')
-def index():
-    return "✅ Land Title Scraper is running. Use /scrape?land_number=########-####"
 
 if __name__ == '__main__':
     app.run(debug=True)
