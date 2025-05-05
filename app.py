@@ -11,7 +11,7 @@ def scrape_land_data_playwright(land_number: str) -> dict:
         context = browser.new_context()
         page = context.new_page()
 
-        page.goto("https://miniapp.mlmupc.gov.kh", timeout=15000)
+        page.goto("https://miniapp.mlmupc.gov.kh/search?digest=Dvy%2B5MEhP2%2F36gfYb2iuIaO6kNNCiOdCVmmoNNVdVBQTDhNqVIkwTwssn33SvcXk80Rj6fL7yKJC%2FRYXdiEJDaDAIlaTGtHn98Ttb7y6pNXzdtuF806hzu2HBefFjIuz0Y%2F%2BmHCaFYP%2Fn41B9EAEQvuLVovWSVRG75PDNCTZMtwdu%2F5%2BF5xV%2B7InLXEhfFbVFdL65u3NN%2FueAxB5fBNsV9%2BGWVn7CsCsR%2B%2Frfng5f0MfLx965CvXSJS2BZU22%2FeUyikeeFjakJ0KRit97MSmw2K2aR1UVkiW%2BzcIi%2Br8uCLKKUmuAfAcpsJZn95dAEIf", timeout=15000)
         page.wait_for_selector('input[name="landNum"]', timeout=10000)
         page.fill('input[name="landNum"]', land_number)
 
